@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do App</title>
+    <style>
+        table, tr, td { 
+            border-style: solid; 
+            border-width: 1px; 
+            border-left-width: 1px; 
+            border-right-width: 1px; 
+            border-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To Do App</h1>
+
+    <form action="/submit" method="post">
+        <input type="text" name="task"></input>
+        <input type="text" name="email"></input>
+
+        <select name="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <input type="submit" value="Add To Do Item">
+    </form>
+
+    <form action="/clear" method="post">
+        <input type="submit" value="Clear">
+    </form>
+
+    <table>
+        <tr>
+            <td>Task</td>
+            <td>Email</td>
+            <td>Priority</td>
+        </tr>
+
+        {% for item in to_do_items %}
+        <tr>
+            <td>{{ item["task"] }}</td>
+            <td>{{ item["email"] }}</td>
+            <td>{{ item["priority"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
