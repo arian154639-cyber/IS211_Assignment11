@@ -4,7 +4,7 @@ my week 3 approach because although the normal version was simple enough, I find
 understand.
 
 HTML/CSS Information: I revisited our materials from week 9 to build the HTML and CSS script, while also
-using our week 11 materials. I only used 'tr/td', because although I knew about 'th', I wanted to stick 
+using our week 11 materials. I only used "tr/td", because although I knew about "th", I wanted to stick 
 to the tutorial style.
 
 May 23 Quick Fix: Updated style consistency to match my new style.
