@@ -4,8 +4,10 @@ my week 3 approach because although the normal version was simple enough, I find
 understand.
 
 HTML/CSS Information: I revisited our materials from week 9 to build the HTML and CSS script, while also
-using our week 11 materials. I only used "tr/td", because although I knew about "th", I wanted to stick 
+using our week 11 materials. I only used 'tr/td', because although I knew about 'th', I wanted to stick 
 to the tutorial style.
+
+May 23 Quick Fix: Updated style consistency to match my new style.
 """
 
 from flask import Flask, render_template, redirect, request
@@ -17,7 +19,7 @@ to_do_items = []
 
 @app.route('/')
 def main_controller():
-    return render_template("index.html", to_do_items=to_do_items)
+    return render_template('index.html', to_do_items=to_do_items)
 
 @app.route('/submit', methods=['POST'])
 def submit_controller():
@@ -25,21 +27,21 @@ def submit_controller():
     email = request.form['email']
     priority = request.form['priority']
 
-    characters = r"\w+"
-    at_symbol = "@"
-    period = r"\."
+    characters = r'\w+'
+    at_symbol = '@'
+    period = r'\.'
 
     email_structure = characters + at_symbol + characters + period + characters
     email_regex = re.compile(email_structure)
 
     valid_email = email_regex.search(email) is not None
-    valid_priority = priority in ["low", "medium", "high"]
+    valid_priority = priority in ['low', 'medium', 'high']
 
     if valid_email and valid_priority:
         to_do_items.append({
-            "task": task,
-            "email": email,
-            "priority": priority
+            'task': task,
+            'email': email,
+            'priority': priority
         })
     return redirect('/')
 
